@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>云API</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/mui.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript" src="../script/min.js"></script>
+    <style>
+        .empty {
+            text-align: center;
+            padding: 120px 0;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap" class="flex-wrap flex-vertical">
+    <div id="main" class="flex-con">
+        <!--头部导航栏-->
+        <div style="display:flex;">
+            <div class="nav" id="nav" style="height: 45.6px;line-height: 45.6px;">
+                <ul>
+                    <li style="width: 50px;"><a href="#">首页</a></li>
+                    <li style="width: 50px;"><a href="#">女装</a></li>
+                    <li style="width: 50px;"><a href="#">男装</a></li>
+                    <li style="width: 50px;"><a href="#">内衣</a></li>
+                    <li style="width: 50px;"><a href="#">鞋子</a></li>
+                    <li style="width: 50px;"><a href="#">帽子</a></li>
+                    <li style="width: 50px;"><a href="#">日用品</a></li>
+                    <li style="width: 50px;"><a href="#">水果</a></li>
+                    <li style="width: 50px;"><a href="#">零食</a></li>
+                    <li style="width: 50px;"><a href="#">其他</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--轮播图-->
+        <div class="mui-slider">
+            <div class="mui-slider-group">
+                <div class="mui-slider-item"><a href="#"><img
+                        src="http://imagecdn.yqphh.com/3/2016/10/5bh9ftcpeckhksyl.jpg"/></a></div>
+                <div class="mui-slider-item"><a href="#"><img
+                        src="http://imagecdn.yqphh.com/3/2016/10/hr47iieyoxpkp1y5.jpg"/></a></div>
+                <div class="mui-slider-item"><a href="#"><img
+                        src="http://imagecdn.yqphh.com/3/2016/10/obtv454aqh62bvk5.jpg"/></a></div>
+            </div>
+        </div>
+
+
+        <div>
+            <div style="" class="goods_list tuan-new div" onclick="go();">
+                <div class="tuan_g div">
+                    <div class="i"></div>
+
+                    <div class="tuan_g_img div">
+                        <image class="loadThumb img"
+                               src="http://www.vip0351.com/Uploads/image/20171223/5a3e120502b21.jpg" data-id="goods_img"
+                               mode="aspectFill"></image>
+                    </div>
+
+                    <div class="tuan_goods_info div">
+                        <div class="p tuan_goods_name">商品标题</div>
+                        <div class="p tuan_goods_cx">
+                            <div class="span"></div>
+                        </div>
+                    </div>
+
+                    <div class="tuan_goods_core div">
+                        <div class="tuan_goods_btn div">
+                            去开团
+                        </div>
+
+                        <div class="tuan_goods_price">
+                            <div class="red span">
+                                <div class="small">￥<span>1000</span>
+                                    <span class="span group-desc"> 3人团.单买价220元</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+</body>
+<script type="text/javascript">
+    window.onload = function(){
+         mui.init({
+            swipeBack:true //启用右滑关闭功能
+          });
+          var gallery = mui('.mui-slider');
+          gallery.slider({
+            interval:100//自动轮播周期，若为0则不自动播放，默认为0；
+          });
+　　}
+
+    function go() {
+      //要减掉头部与尾部
+      // var headerH = $api.offset($api.dom('#header')).h;
+      // var footerH = $api.offset($api.dom('#footer')).h;
+      // var frameH = api.winHeight - headerH - footerH;
+      api.openFrame({
+          name: 'main',
+          url: './html/main.html',
+          bounces: true,
+          rect: {
+              x: 0,
+              // y: headerH,
+              w: 'auto',
+              // h: frameH
+          }
+      });
+    }
+    // window.onload = function(){
+    //   mui.init({
+    //       swipeBack:true //启用右滑关闭功能
+    //     });
+    //     var gallery = mui('.mui-slider');
+    //     gallery.slider({
+    //       interval:5000//自动轮播周期，若为0则不自动播放，默认为0；
+    //     });
+    // 　　}
+
+    apiready = function () {
+
+    }
+    //start
+    window.Swipe = function (b, a) {
+        if (!b) {
+            return null
+        }
+        this.options = a || {};
+        this.index = this.options.startSlide || 0;//开始的导航页的第几屏
+        this.speed = this.options.speed || 300;//速度
+        this.lwidth = this.options.width || 80;//导航li宽度
+        this.delay = this.options.auto || 0;//自动滚动菜单速度0为不自动滚动
+        this.container = b;//在那个容器内
+        this.element = this.container.children[0];//
+
+        this.setup();
+
+        if (this.delay != 0) {
+            this.begin();
+        }
+        if (this.element.addEventListener) {
+            this.element.addEventListener("touchstart", this, false);
+            this.element.addEventListener("touchmove", this, false);
+            this.element.addEventListener("touchend", this, false);
+            this.element.addEventListener("touchcancel", this, false);
+            this.element.addEventListener("webkitTransitionEnd", this, false);
+            this.element.addEventListener("msTransitionEnd", this, false);
+            this.element.addEventListener("oTransitionEnd", this, false);
+            this.element.addEventListener("transitionend", this, false);//监听过度动画是否结束
+            window.addEventListener("resize", this, false)
+        }
+    };
+    Swipe.prototype = {
+//设置其基本样式
+        setup: function () {
+            this.slides = this.element.children;
+            this.width = Math.ceil(("getBoundingClientRect" in this.container) ? this.container.getBoundingClientRect().width : this.container.offsetWidth);
+            if (!this.width || this.slides.length < 1) {//没有子节点，获取不到屏幕宽度均返回
+                return null
+            }
+            this.element.style.width = Math.ceil(this.slides.length * this.lwidth) + "px";
+            var a = this.slides.length;
+            while (a--) {
+                var b = this.slides[a];
+                b.style.width = this.lwidth + "px";
+            }
+            this.slide(this.index, 0);
+        },
+        slide: function (a, c) {
+            var b = this.element.style;
+            if (c == undefined) {
+                c = this.speed
+            }
+            //过度效果需要花费时间
+            b.webkitTransitionDuration = b.MozTransitionDuration = b.msTransitionDuration = b.OTransitionDuration = b.transitionDuration = c + "ms";
+            this.index = a;
+            //console.log(a * this.width,Math.ceil((this.slides.length*this.lwidth)/this.width));
+            if (a * this.width > (Math.ceil((this.slides.length * this.lwidth) / this.width) - 1) * this.width) {
+//          b.MozTransform = b.webkitTransform = "translate3d(" + -((Math.ceil((this.slides.length*this.lwidth)/this.width)-1) * this.width) + "px,0,0)";
+//       b.msTransform = b.OTransform = "translateX(" + -((Math.ceil((this.slides.length*this.lwidth)/this.width)-1) * this.width) + "px)";
+                return false;
+            }
+            else {
+                b.MozTransform = b.webkitTransform = "translate3d(" + -(a * this.width) + "px,0,0)";
+                b.msTransform = b.OTransform = "translateX(" + -(a * this.width) + "px)";
+            }
+
+        },
+        getPos: function () {
+            return this.index
+        },
+        //前一个，
+        prev: function (a) {
+            this.delay = a || 0;
+            clearTimeout(this.interval);
+            // console.log(this.index);
+            if (this.index) {
+                this.slide(this.index - 1, this.speed);
+                //console.log( this.index);
+            } else {
+                this.slide(this.length - 1, this.speed)
+            }
+        },
+        //后一个
+        next: function (a) {
+            this.delay = a || 0;
+            clearTimeout(this.interval);
+            if (this.index < this.length - 1) {
+                this.slide(this.index + 1, this.speed)
+            } else {
+                this.slide(0, this.speed)
+            }
+        },
+        begin: function () {
+            var a = this;
+            console.log(a);
+            this.interval = (this.delay) ? setTimeout(function () {
+                        a.next(a.delay)
+                    },
+                    this.delay) : 0
+        },
+        stop: function () {
+            this.delay = 0;
+            clearTimeout(this.interval)
+        },
+        resume: function () {
+            this.delay = this.options.auto || 0;
+            this.begin()
+        },
+        handleEvent: function (a) {
+            switch (a.type) {
+                case "touchstart":
+                    this.onTouchStart(a);
+                    break;
+                case "touchmove":
+                    this.onTouchMove(a);
+                    break;
+                case "touchcancel":
+                case "touchend":
+                    this.onTouchEnd(a);
+                    break;
+                case "webkitTransitionEnd":
+                case "msTransitionEnd":
+                case "oTransitionEnd":
+                case "transitionend":
+                    this.transitionEnd(a);
+                    break;
+                case "resize":
+                    this.setup();
+                    break
+            }
+        },
+        transitionEnd: function (a) {
+            if (this.delay) {
+                this.begin()
+            }
+
+        },
+        onTouchStart: function (a) {
+            this.start = {
+                pageX: a.touches[0].pageX,
+                pageY: a.touches[0].pageY,
+                time: Number(new Date())
+
+            };
+            // console.log(this.start)
+            this.isScrolling = undefined;
+            this.deltaX = 0;
+            this.element.style.MozTransitionDuration = this.element.style.webkitTransitionDuration = 0;
+            a.stopPropagation()
+        },
+        onTouchMove: function (a) {
+            if (a.touches.length > 1 || a.scale && a.scale !== 1) {
+                return
+            }
+            this.deltaX = a.touches[0].pageX - this.start.pageX;
+            if (typeof this.isScrolling == "undefined") {
+                //判断是横向还是树向滑动
+                this.isScrolling = !!(this.isScrolling || Math.abs(this.deltaX) < Math.abs(a.touches[0].pageY - this.start.pageY))
+            }
+            if (!this.isScrolling) {
+                a.preventDefault();
+                clearTimeout(this.interval);
+                this.deltaX = this.deltaX / ((!this.index && this.deltaX > 0 || this.index == this.length - 1 && this.deltaX < 0) ? (Math.abs(this.deltaX) / this.width + 1) : 1);
+                this.element.style.MozTransform = this.element.style.webkitTransform = "translate3d(" + (this.deltaX - this.index * this.width) + "px,0,0)";
+                a.stopPropagation()
+            }
+        },
+        onTouchEnd: function (c) {
+            var b = Number(new Date()) - this.start.time < 250 && Math.abs(this.deltaX) > 20 || Math.abs(this.deltaX) > this.width / 2,
+                    a = !this.index && this.deltaX > 0 || this.index == this.length - 1 && this.deltaX < 0;
+            if (!this.isScrolling) {
+                this.slide(this.index + (b && !a ? (this.deltaX < 0 ? 1 : -1) : 0), this.speed)
+            }
+            c.stopPropagation()
+        }
+    };
+    //开始调用插件
+    var slider = new Swipe(document.getElementById('nav'), {speed: 500, auto: 0, width: 100, col: 4});
+</script>
+
+</html>
