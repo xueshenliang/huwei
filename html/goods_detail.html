@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>附近新品秒杀</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/mui.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/heard.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/goods_detail.css"/>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript" src="../script/min.js"></script>
+    <style>
+        .empty {
+            text-align: center;
+            padding: 120px 0;
+        }
+
+        /* 头部导航样式 */
+        .swiper-slide img {
+            width: 100%;
+        }
+        body{
+          background-color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+<!--顶部标题栏-->
+<div class="header" id="topbar">
+    <div class="left" tapmode onclick="goback()">
+        <img src="../image/fhui.png" alt="" class="logoleft">
+    </div>
+    <div class="t">
+        <span class="title">商品详情</span>
+    </div>
+</div>
+
+<!--内容区-->
+<div>
+    <!--轮播主图-->
+    <div class="mui-slider">
+        <div class="mui-slider-group">
+            <div class="mui-slider-item"><a href="#"><img
+                    src="http://www.vip0351.com/Uploads/image/20171223/5a3e120502b21.jpg"/></a></div>
+        </div>
+    </div>
+
+
+    <div class="goods-info goods-white div">
+        <div class="goods-name div">这里是安徽省看看开放基金</div>
+        <div class="goods_price div">
+            <div class="red span">
+                <div class="red-padding span" style="font-size:18px;">￥12332.00
+                <span class="grey span">
+                    <span class="grey-padding span">
+                        <span class="small">￥</span>
+                    </span>
+                    11.00
+                    <span class="market-price span">（原价）</span>
+                </span>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="goods-sold div"> 累计销量：0件</div>
+        </div>
+
+        <div style="background-color:#EDEDED;height:10px;"></div>
+
+        <div class="image-text goods-white">
+            <div class="text-title">
+                图文详情
+            </div>
+            <div class="cont">
+                111111
+            </div>
+        </div>
+
+        <div class="ft_nav">
+            <div class="goods-home">
+
+            </div>
+            <div class="bug-price">
+                <div class="span small">￥3.00</div>
+                <div class="div bug-type">单独购</div>
+            </div>
+            <div class="bug-price pj">
+                <div class="span small">￥12332.00</div>
+                <div class="div bug-type">23人团</div>
+            </div>
+        </div>
+
+</body>
+<script type="text/javascript">
+    window.onload = function () {
+        mui.init({
+            swipeBack: true //启用右滑关闭功能
+        });
+        var gallery = mui('.mui-slider');
+        gallery.slider({
+            interval: 100//自动轮播周期，若为0则不自动播放，默认为0；
+        });
+    }
+    function goback() {
+        api.closeFrame({name: 'goods'});
+    }
+</script>
+</html>

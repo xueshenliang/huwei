@@ -25,16 +25,17 @@
         .flex-con{
           overflow: auto
         }
+
     </style>
 </head>
 <body>
 <div id="wrap" class="flex-wrap flex-vertical">
     <header id="header">
         <ul>
-            <li class="border-b active" >附近商品</li>
-            <li class="border-b" >端API</li>
-            <li class="border-b" >开发</li>
-            <li class="border-b" >文档</li>
+            <li class="border-b active" >附近新品秒杀</li>
+            <li class="border-b" >拼团</li>
+            <li class="border-b" >订单</li>
+            <li class="border-b" >我的</li>
         </ul>
     </header>
     <div id="main" class="flex-con">
@@ -60,14 +61,15 @@
             color: '#6ab494'
         });
 
-        //要减掉头部与尾部
+        //要减掉头部与尾部，默认加载主页
         var headerH = $api.offset($api.dom('#header')).h;
         var footerH = $api.offset($api.dom('#footer')).h;
         var frameH = api.winHeight - headerH - footerH;
         api.openFrame({
             name: 'main',
             url: './html/main.html',
-            bounces: true,
+            bounces: true,  //上下滑动
+            scrollEnabled: true,
             rect: {
                 x: 0,
                 y: headerH,

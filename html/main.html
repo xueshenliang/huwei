@@ -20,28 +20,27 @@
     </style>
 </head>
 <body>
-<div id="wrap" class="flex-wrap flex-vertical">
-    <div id="main" class="flex-con">
+
         <!--头部导航栏-->
-        <div style="display:flex;">
+        <div class="nav_herad">
             <div class="nav" id="nav" style="height: 45.6px;line-height: 45.6px;">
                 <ul>
-                    <li style="width: 50px;"><a href="#">首页</a></li>
-                    <li style="width: 50px;"><a href="#">女装</a></li>
-                    <li style="width: 50px;"><a href="#">男装</a></li>
-                    <li style="width: 50px;"><a href="#">内衣</a></li>
-                    <li style="width: 50px;"><a href="#">鞋子</a></li>
-                    <li style="width: 50px;"><a href="#">帽子</a></li>
-                    <li style="width: 50px;"><a href="#">日用品</a></li>
-                    <li style="width: 50px;"><a href="#">水果</a></li>
-                    <li style="width: 50px;"><a href="#">零食</a></li>
-                    <li style="width: 50px;"><a href="#">其他</a></li>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">女装</a></li>
+                    <li><a href="#">男装</a></li>
+                    <li><a href="#">内衣</a></li>
+                    <li><a href="#">鞋子</a></li>
+                    <li><a href="#">帽子</a></li>
+                    <li><a href="#">日用品</a></li>
+                    <li><a href="#">水果</a></li>
+                    <li><a href="#">零食</a></li>
+                    <li><a href="#">其他</a></li>
                 </ul>
             </div>
         </div>
 
         <!--轮播图-->
-        <div class="mui-slider">
+        <div class="mui-slider" style="margin-top: 46px;">
             <div class="mui-slider-group">
                 <div class="mui-slider-item"><a href="#"><img
                         src="http://imagecdn.yqphh.com/3/2016/10/5bh9ftcpeckhksyl.jpg"/></a></div>
@@ -52,15 +51,53 @@
             </div>
         </div>
 
+        <div class="goodlist">
+          <div class="goodlist_1">
+              <div style="" class="goods_list tuan-new div" onclick="go();">
+                  <div class="tuan_g div">
+                      <div class="i"></div>
 
-        <div>
+                      <div class="tuan_g_img div">
+                          <image class="loadThumb img"
+                                 src="http://www.vip0351.com/Uploads/image/20171223/5a3e120502b21.jpg" data-id="goods_img"
+                                 mode="aspectFill"></image>
+                      </div>
+
+                      <div class="tuan_goods_info div">
+                          <div class="p tuan_goods_name">商品标题</div>
+                          <div class="p tuan_goods_cx">
+                              <div class="span"></div>
+                          </div>
+                      </div>
+
+                      <div class="tuan_goods_core div">
+                          <div class="tuan_goods_btn div">
+                              去开团
+                          </div>
+
+                          <div class="tuan_goods_price">
+                              <div class="red span">
+                                  <div class="small">￥<span>1000</span>
+                                      <span class="span group-desc"> 3人团.单买价220元</span>
+                                  </div>
+
+                              </div>
+
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+
+        <div class="goodlist_1">
             <div style="" class="goods_list tuan-new div" onclick="go();">
                 <div class="tuan_g div">
                     <div class="i"></div>
 
                     <div class="tuan_g_img div">
                         <image class="loadThumb img"
-                               src="http://www.vip0351.com/Uploads/image/20171223/5a3e120502b21.jpg" data-id="goods_img"
+                               src="http://www.vip0351.com/Uploads/image/20171223/5a3e1325ca9fc.jpg" data-id="goods_img"
                                mode="aspectFill"></image>
                     </div>
 
@@ -91,10 +128,46 @@
             </div>
         </div>
 
+        <div>
+                   <div style="" class="goods_list tuan-new div" onclick="go();">
+                       <div class="tuan_g div">
+                           <div class="i"></div>
 
-    </div>
+                           <div class="tuan_g_img div">
+                               <image class="loadThumb img"
+                                      src="http://www.vip0351.com/Uploads/image/20171223/5a3e120502b21.jpg" data-id="goods_img"
+                                      mode="aspectFill"></image>
+                           </div>
 
-</div>
+                           <div class="tuan_goods_info div">
+                               <div class="p tuan_goods_name">商品标题</div>
+                               <div class="p tuan_goods_cx">
+                                   <div class="span"></div>
+                               </div>
+                           </div>
+
+                           <div class="tuan_goods_core div">
+                               <div class="tuan_goods_btn div">
+                                   去开团
+                               </div>
+
+                               <div class="tuan_goods_price">
+                                   <div class="red span">
+                                       <div class="small">￥<span>1000</span>
+                                           <span class="span group-desc"> 3人团.单买价220元</span>
+                                       </div>
+
+                                   </div>
+
+                               </div>
+                           </div>
+
+                       </div>
+                   </div>
+               </div>
+      </div>
+
+
 </body>
 <script type="text/javascript">
     window.onload = function(){
@@ -113,9 +186,9 @@
       // var footerH = $api.offset($api.dom('#footer')).h;
       // var frameH = api.winHeight - headerH - footerH;
       api.openFrame({
-          name: 'main',
-          url: './html/main.html',
-          bounces: true,
+          name: 'goods',
+          url: '../html/goods_detail.html',
+          bounces: false,
           rect: {
               x: 0,
               // y: headerH,

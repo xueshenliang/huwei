@@ -1,0 +1,9 @@
+/* 头部导航样式 */
+.header {position: relative;height: 50px;line-height: 50px;background-color: #3993cf;}
+.header .left  {position: absolute;left: 0;height: 50px;}
+.header .left  .logoleft {height: 20px;vertical-align: top; margin-top: 15px;margin-left: 5px;}
+.header .t .title {font-size: 16px; color:#ffffff;padding-right: 10px;display: inline-block;margin: 0 auto;}
+.header .t{
+  margin: 0 auto;
+  text-align: center;
+}
