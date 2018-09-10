@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>开发</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <style>
+        .empty {
+            text-align: center;
+            padding: 120px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="empty">开发进行中</div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    //ftp://y153.dydytt.net:9130/[阳光电影www.ygdy8.com].追捕野蛮人.BD.720p.中英双字幕.rmvb
+//    apiready = function () {
+//        var moviePlayer = api.require('moviePlayer');
+//        moviePlayer.open({
+//            rect: {
+//                x: 0,
+//                y: 0,
+//                w: api.frameWidth,
+//                h: 300
+//            },
+//            styles: {
+//                head: {
+//                    bg: 'rgba(161,161,161,0.5)',
+//                    height: 44,
+//                    y: 20,
+//                    title: {
+//                        size: 20,
+//                        color: '#fff',
+//                        width: 40,
+//                        leftMargin: 10
+//                    },
+//                    backSize: 30,
+//                    backImg: 'widget://image/back.png',
+//                    customButtons: [{
+//                        w: 30,
+//                        h: 30,
+//                        rightMagin: 10,
+//                        img: 'widget://image/image/collect.png',
+//                        imgSelected: 'fs://image/collectSelected.png',
+//                    }]
+//                },
+//                foot: {
+//                    bg: 'rgba(0,0,0,0.5)',
+//                    height: 44,
+//                    palyBtn: {
+//                        size: 20,
+//                        playImg: 'widget://image/play.png',
+//                        pauseImg: 'widget://image/pause.png',
+//                        marginLeft: 5
+//                    },
+//                    currentTimeLabel: {
+//                        textSize: 14,
+//                        textColor: "#FFF",
+//                        textWidth: 43,
+//                        marginLeft: 5
+//                    },
+//                    seekBar: {
+//                        sliderImg: 'widget://image/circle.png',
+//                        sliderW: 20,
+//                        sliderH: 20,
+//                        progressColor: '#696969',
+//                        progressSelected: '#76EE00',
+//                        marginLeft: 10,
+//                        marginRight: 10
+//                    },
+//                    totalTimeLabel: {
+//                        textSize: 14,
+//                        textColor: "#FFF",
+//                        textWidth: 43,
+//                        marginRight: 5
+//                    },
+//                    fullscreenBtn: {
+//                        size: 20,
+//                        verticalImg: 'widget://image/vertical.png',
+//                        horizontalImg: 'widget://image/horizontal.png'
+//                    }
+//                }
+//            },
+//            path: 'ftp://y153.dydytt.net:9130/[阳光电影www.ygdy8.com].追捕野蛮人.BD.720p.中英双字幕.rmvb',
+//            autoPlay: true
+//        }, function (ret, err) {
+//            if (ret) {
+//                // alert(JSON.stringify(ret));
+//                // } else {
+//                // alert(JSON.stringify(err));
+//            }
+//
+//        });
+    apiready = function () {
+        var videoPlayer = api.require('videoPlayer');
+        videoPlayer.play({
+            texts: {
+                head: {
+                    title: '顶部文字'
+                }
+            },
+            styles: {
+                head: {
+                    bg: 'rgba(0.5,0.5,0.5,0.7)',
+                    height: 44,
+                    titleSize: 20,
+                    titleColor: '#fff',
+                    backSize: 44,
+                    backImg: 'fs://img/back.png',
+                    setSize: 44,
+                    setImg: 'fs://img/set.png'
+                },
+                foot: {
+                    bg: 'rgba(0.5,0.5,0.5,0.7)',
+                    height: 44,
+                    playSize: 44,
+                    playImg: 'fs://img/back.png',
+                    pauseImg: 'fs://img/back.png',
+                    nextSize: 44,
+                    nextImg: 'fs://img/back.png',
+                    timeSize: 14,
+                    timeColor: '#fff',
+                    sliderImg: 'fs://img/slder.png',
+                    progressColor: '#696969',
+                    progressSelected: '#76EE00'
+                }
+            },
+            path: 'player.pptv.com/flashplayer/pid/86001/pl/0a2eoqaepqeen5zHraCS07OW/rcc_id/baiduduanshipin.swf', //（可选项）字符串类型；文档的路径，支持网络和本地（fs://）路径；默认：未传值时不播放
+            //在 android 平台上不支持 widget://
+            autoPlay: true //（可选项）布尔类型；打开时是否自动播放；默认：true（自动播放）
+        }, function (ret, err) {
+            if (ret) {
+                alert(JSON.stringify(ret));
+            } else {
+                alert(JSON.stringify(err));
+            }
+        });
+    }
+</script>
+
+</html>
