@@ -1,33 +1,109 @@
-html,body {  font-size:14px; height:100%;  }
-.hover{ opacity: .8; }
+html, body {
+    font-size: 14px;
+    height: 100%;
+}
 
-.flex-wrap{ display: -webkit-box;	display: -webkit-flex;	display: flex; }
-.flex-con{     -webkit-box-flex: 1;     -webkit-flex: 1;    flex: 1;overflow: auto;}
-.flex-vertical{ -webkit-box-orient: vertical;-webkit-flex-flow: column;flex-flow: column;}
+.hover {
+    opacity: .8;
+}
+
+.flex-wrap {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flex-con {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+
+.flex-vertical {
+    -webkit-box-orient: vertical;
+    -webkit-flex-flow: column;
+    flex-flow: column;
+}
 
 .border-t,
-.border-b{ position:relative;  }
+.border-b {
+    position: relative;
+}
+
 .border-t:before,
-.border-b:after{     content: '';     position: absolute;     left: 0;  top:0;     background: #ddd;   right:0;    height: 1px;     -webkit-transform: scaleY(0.5);             transform: scaleY(0.5);     -webkit-transform-origin: 0 0;             transform-origin: 0 0; }
-.border-b:after{ top:auto; bottom:0;  }
-.mas{
-	background:#009933;
-	color: white;
+.border-b:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #ddd;
+    right: 0;
+    height: 1px;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
 }
-#wrap{ height: 100%; }
-.nav_herad{
- width:100%;position:fixed;top:0;left:0;background-color: #eceded;z-index: 999;
+
+.border-b:after {
+    top: auto;
+    bottom: 0;
 }
- .nav{width:100%;overflow:hidden;margin:0 auto;height:35px;position:relative; line-height:35px;}
- .nav ul{position:absolute;left:0;top:0;width:640px;z-index:1;}
- .nav ul li{width:50px !important;float:left;overflow:hidden;}
- .nav a{width:100%; display:block; text-decoration:none; text-align:center;color: black;font-size: 14px;}
+
+.mas {
+    background: #009933;
+    color: white;
+}
+
+#wrap {
+    height: 100%;
+}
+
+.nav_herad {
+    width: 100%;
+    position: fixed;
+    top: 2px;
+    left: 0;
+    z-index: 999;
+}
+
+.nav {
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    height: 35px;
+    position: relative;
+    line-height: 35px;
+}
+
+.nav ul {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 640px;
+    z-index: 1;
+}
+
+.nav ul li {
+    width: 50px !important;
+    float: left;
+    overflow: hidden;
+}
+
+.nav a {
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    font-size: 14px;
+}
 
 .goods_list {
     /* margin: 0 1px; */
     overflow: hidden;
 }
-
 
 .tuan-new .label-orange-hot {
     line-height: 35px;
@@ -52,10 +128,12 @@ html,body {  font-size:14px; height:100%;  }
 .tuan-new .tuan_goods_info {
     padding: 9px 11px;
 }
-.div{
+
+.div {
     margin: auto;
     max-width: 640px
 }
+
 .tuan_g_img {
     display: block;
     position: relative;
@@ -104,8 +182,9 @@ html,body {  font-size:14px; height:100%;  }
     color: #9c9c9c;
     font-size: 14px;
     position: relative;
-    top:-1px;
+    top: -1px;
 }
+
 .tuan-new .tuan_goods_core .tuan_goods_btn {
     float: right;
     height: 30px;
@@ -113,7 +192,7 @@ html,body {  font-size:14px; height:100%;  }
     color: #fff;
     background-color: #FF6600;
     border-radius: 3px;
-    width:75px;
+    width: 75px;
     vertical-align: middle;
     text-align: center;
 }
